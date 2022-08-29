@@ -1,0 +1,29 @@
+version: '3.8'
+
+services:
+  mysql:
+    container_name: mysql
+    build:
+      context: ../
+      dockerfile: deployments/mysql/Dockerfile
+    environment:
+      MYSQL_ROOT_PASSWORD: toor
+      MYSQL_DATABASE: todo_db
+      MYSQL_USER: user
+      MYSQL_PASSWORD: password  
+    ports:
+      - 3306:3306  
+
+  postgresql:
+    container_name: postgresql
+    build:
+      context: ../
+      dockerfile: deployments/postgresql/Dockerfile
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: todo_db  
+    ports:
+      - 5432:5432  
+
+

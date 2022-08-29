@@ -1,0 +1,4 @@
+### register
+curl -v -X POST http://localhost:8080/api/user/register
+    -H 'Content-Type: application/json'
+    -d '{"username":"manhpham90vn","email":"manhpham90vn@icloud.com","password":"12345678"}'
